@@ -1,6 +1,6 @@
 apps:
 - script: ./bin/www       # 入口文件
-  name: 'app'              # 程序名称
+  name: 'r_test'              # 程序名称
   env:                     # 环境变量
     COMMON_VARIABLE: true
   env_production:
@@ -13,8 +13,8 @@ deploy:                     # 部署脚本
     port: 22                # ssh端口
     ref: origin/master      # 要拉取的git分支
     ssh_options: StrictHostKeyChecking=no # SSH 公钥检查
-    repo: git@github.com:pipi-gou/suningtest.git # 远程仓库地址
-    path: /www/suning             # 拉取到服务器某个目录下
+    repo: git@github.com:pipi-gou/r_test.git # 远程仓库地址
+    path: /www/r             # 拉取到服务器某个目录下
     pre-deploy: git fetch --all # 部署前执行
     post-deploy: npm install &&  pm2 reload deploy.yaml --env production # 部署后执行
     env:
